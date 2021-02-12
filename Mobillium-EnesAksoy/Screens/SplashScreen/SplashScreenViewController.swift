@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SplashScreenViewController.swift
 //  Mobillium-EnesAksoy
 //
 //  Created by ENES AKSOY on 12.02.2021.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
