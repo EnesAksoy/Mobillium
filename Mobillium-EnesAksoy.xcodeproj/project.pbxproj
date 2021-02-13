@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		8F79FE1225D7264000238486 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1125D7264000238486 /* APIService.swift */; };
 		8F79FE1725D728E200238486 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1625D728E200238486 /* ResultModel.swift */; };
 		8F79FE1925D72AF500238486 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1825D72AF500238486 /* ResponseModel.swift */; };
+		8F79FE1E25D7BE3200238486 /* SplashScreenViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1D25D7BE3200238486 /* SplashScreenViewModelDelegate.swift */; };
+		8F79FE2025D7BE6A00238486 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1F25D7BE6A00238486 /* SplashScreenViewModel.swift */; };
 		8F79FE2325D7C0A500238486 /* ObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE2225D7C0A500238486 /* ObjectStore.swift */; };
 		8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE2525D7C4C800238486 /* UIViewControllerExtensions.swift */; };
 		8F79FE2A25D7C56400238486 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FE2C25D7C56400238486 /* Localizable.strings */; };
@@ -36,6 +38,8 @@
 		8F79FE1125D7264000238486 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8F79FE1625D728E200238486 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		8F79FE1825D72AF500238486 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		8F79FE1D25D7BE3200238486 /* SplashScreenViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModelDelegate.swift; sourceTree = "<group>"; };
+		8F79FE1F25D7BE6A00238486 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
 		8F79FE2225D7C0A500238486 /* ObjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectStore.swift; sourceTree = "<group>"; };
 		8F79FE2525D7C4C800238486 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		8F79FE2B25D7C56400238486 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -60,7 +64,6 @@
 				A310328FA661B6CA621463BC /* Pods-Mobillium-EnesAksoy.debug.xcconfig */,
 				1402517843E18F0DF702B214 /* Pods-Mobillium-EnesAksoy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -167,8 +170,10 @@
 		8F79FE0A25D71C9A00238486 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8F79FE1A25D7BDE600238486 /* Protocol */,
+				8F79FE1B25D7BDEC00238486 /* ViewController */,
+				8F79FE1C25D7BDF300238486 /* ViewModel */,
 				8F79FE0D25D71F2800238486 /* SplashScreen.storyboard */,
-				8F79FE0F25D71F4600238486 /* SplashScreenViewController.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -180,6 +185,30 @@
 				8F79FE1825D72AF500238486 /* ResponseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8F79FE1A25D7BDE600238486 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8F79FE1D25D7BE3200238486 /* SplashScreenViewModelDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		8F79FE1B25D7BDEC00238486 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8F79FE0F25D71F4600238486 /* SplashScreenViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8F79FE1C25D7BDF300238486 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8F79FE1F25D7BE6A00238486 /* SplashScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8F79FE2125D7C08900238486 /* ObjectStore */ = {
@@ -326,8 +355,10 @@
 				8F79FE1025D71F4600238486 /* SplashScreenViewController.swift in Sources */,
 				8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */,
 				8F79FE1225D7264000238486 /* APIService.swift in Sources */,
+				8F79FE1E25D7BE3200238486 /* SplashScreenViewModelDelegate.swift in Sources */,
 				8F79FE2325D7C0A500238486 /* ObjectStore.swift in Sources */,
 				8F79FE1725D728E200238486 /* ResultModel.swift in Sources */,
+				8F79FE2025D7BE6A00238486 /* SplashScreenViewModel.swift in Sources */,
 				8F79FE1925D72AF500238486 /* ResponseModel.swift in Sources */,
 				8F79FDF225D719B700238486 /* SceneDelegate.swift in Sources */,
 			);
