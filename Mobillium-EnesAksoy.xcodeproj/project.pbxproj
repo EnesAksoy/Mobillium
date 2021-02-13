@@ -13,6 +13,7 @@
 		8F79FDFC25D719BB00238486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FDFA25D719BB00238486 /* LaunchScreen.storyboard */; };
 		8F79FE0E25D71F2800238486 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FE0D25D71F2800238486 /* SplashScreen.storyboard */; };
 		8F79FE1025D71F4600238486 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE0F25D71F4600238486 /* SplashScreenViewController.swift */; };
+		8F79FE1225D7264000238486 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1125D7264000238486 /* APIService.swift */; };
 		8F79FE1725D728E200238486 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1625D728E200238486 /* ResultModel.swift */; };
 		8F79FE1925D72AF500238486 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1825D72AF500238486 /* ResponseModel.swift */; };
 		8F79FE2325D7C0A500238486 /* ObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE2225D7C0A500238486 /* ObjectStore.swift */; };
@@ -32,6 +33,7 @@
 		8F79FDFD25D719BB00238486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F79FE0D25D71F2800238486 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		8F79FE0F25D71F4600238486 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		8F79FE1125D7264000238486 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8F79FE1625D728E200238486 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		8F79FE1825D72AF500238486 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		8F79FE2225D7C0A500238486 /* ObjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectStore.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		8F79FE0425D71BFA00238486 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				8F79FE1125D7264000238486 /* APIService.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				8F79FDF025D719B700238486 /* AppDelegate.swift in Sources */,
 				8F79FE1025D71F4600238486 /* SplashScreenViewController.swift in Sources */,
 				8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */,
+				8F79FE1225D7264000238486 /* APIService.swift in Sources */,
 				8F79FE2325D7C0A500238486 /* ObjectStore.swift in Sources */,
 				8F79FE1725D728E200238486 /* ResultModel.swift in Sources */,
 				8F79FE1925D72AF500238486 /* ResponseModel.swift in Sources */,
