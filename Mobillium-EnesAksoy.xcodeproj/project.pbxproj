@@ -15,6 +15,7 @@
 		8F79FE1025D71F4600238486 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE0F25D71F4600238486 /* SplashScreenViewController.swift */; };
 		8F79FE1725D728E200238486 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1625D728E200238486 /* ResultModel.swift */; };
 		8F79FE1925D72AF500238486 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE1825D72AF500238486 /* ResponseModel.swift */; };
+		8F79FE2325D7C0A500238486 /* ObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE2225D7C0A500238486 /* ObjectStore.swift */; };
 		8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE2525D7C4C800238486 /* UIViewControllerExtensions.swift */; };
 		BD040C1BAE8F62B2FD575F1F /* Pods_Mobillium_EnesAksoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5F77FF91E740C27296F5B4 /* Pods_Mobillium_EnesAksoy.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		8F79FE0F25D71F4600238486 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		8F79FE1625D728E200238486 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		8F79FE1825D72AF500238486 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		8F79FE2225D7C0A500238486 /* ObjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectStore.swift; sourceTree = "<group>"; };
 		8F79FE2525D7C4C800238486 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		A310328FA661B6CA621463BC /* Pods-Mobillium-EnesAksoy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobillium-EnesAksoy.debug.xcconfig"; path = "Target Support Files/Pods-Mobillium-EnesAksoy/Pods-Mobillium-EnesAksoy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 			children = (
 				8F79FE0525D71C1900238486 /* Application */,
 				8F79FE0625D71C2000238486 /* Common */,
+				8F79FE2125D7C08900238486 /* ObjectStore */,
 				8F79FE0325D71BEB00238486 /* Presentation */,
 				8F79FE0725D71C2600238486 /* Resources */,
 				8F79FE0825D71C2C00238486 /* Screens */,
@@ -171,6 +174,14 @@
 				8F79FE1825D72AF500238486 /* ResponseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8F79FE2125D7C08900238486 /* ObjectStore */ = {
+			isa = PBXGroup;
+			children = (
+				8F79FE2225D7C0A500238486 /* ObjectStore.swift */,
+			);
+			path = ObjectStore;
 			sourceTree = "<group>";
 		};
 		8F79FE2425D7C4BA00238486 /* Extensions */ = {
@@ -299,6 +310,7 @@
 				8F79FDF025D719B700238486 /* AppDelegate.swift in Sources */,
 				8F79FE1025D71F4600238486 /* SplashScreenViewController.swift in Sources */,
 				8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */,
+				8F79FE2325D7C0A500238486 /* ObjectStore.swift in Sources */,
 				8F79FE1725D728E200238486 /* ResultModel.swift in Sources */,
 				8F79FE1925D72AF500238486 /* ResponseModel.swift in Sources */,
 				8F79FDF225D719B700238486 /* SceneDelegate.swift in Sources */,
