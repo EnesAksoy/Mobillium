@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Mobillium-EnesAksoy
+
+  Created by ENES AKSOY on 13.02.2021.
+  Copyright © 2021 ENES AKSOY. All rights reserved.
+*/
+
+/* General */
+
+"MessageTitle1" = "ERROR";
+"AlertButtonTitle" = "OK";
