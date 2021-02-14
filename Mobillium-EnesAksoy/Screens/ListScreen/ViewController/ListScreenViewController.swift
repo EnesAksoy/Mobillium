@@ -97,6 +97,8 @@ class ListScreenViewController: UIViewController {
     }
     
     private func searchTableViewAddSubview() {
+        self.dismissSearchView()
+        self.searchListView.isHidden = false
         self.addChild(searchView)
         searchView.view.center = self.searchListView.center
         searchView.view.frame = self.searchListView.frame
