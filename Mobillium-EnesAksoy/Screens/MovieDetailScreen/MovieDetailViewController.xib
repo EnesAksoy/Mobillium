@@ -138,9 +138,9 @@
                 <constraint firstItem="C9o-uU-gdV" firstAttribute="top" secondItem="n0k-wB-tXt" secondAttribute="bottom" constant="10" id="C77-Tf-BJV"/>
                 <constraint firstItem="n0k-wB-tXt" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.35" id="JkN-86-9yZ"/>
                 <constraint firstAttribute="trailing" secondItem="j7b-SS-Zeh" secondAttribute="trailing" constant="5" id="MCh-nT-96p"/>
+                <constraint firstItem="EaO-Ve-Y63" firstAttribute="bottom" secondItem="z7X-ks-Vq1" secondAttribute="bottom" constant="3" id="Mtd-Py-FpO"/>
                 <constraint firstItem="n0k-wB-tXt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OpU-hW-Myd"/>
                 <constraint firstItem="C9o-uU-gdV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="S3A-Uj-5Bg"/>
-                <constraint firstAttribute="bottom" secondItem="z7X-ks-Vq1" secondAttribute="bottom" constant="3" id="YR1-O5-vOI"/>
                 <constraint firstItem="GPO-4j-Egg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="cTU-AH-LIL"/>
                 <constraint firstItem="j7b-SS-Zeh" firstAttribute="top" secondItem="GPO-4j-Egg" secondAttribute="bottom" constant="5" id="clJ-8T-7k0"/>
                 <constraint firstItem="n0k-wB-tXt" firstAttribute="top" secondItem="EaO-Ve-Y63" secondAttribute="top" id="hrY-ft-WzI"/>

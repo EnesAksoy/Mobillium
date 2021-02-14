@@ -15,6 +15,7 @@ class ListTableViewCell: UITableViewCell {
     
     private let posterBaseUrl = "https://image.tmdb.org/t/p/w500"
     private let imageCornerRadius: CGFloat = 6
+    private let placeholderText = "placeholder"
     
     // MARK: - Outlets
     
@@ -32,7 +33,7 @@ class ListTableViewCell: UITableViewCell {
     func configureCell(posterUrl: String, title: String, description: String, date: String) {
         let posterUrl = URL(string: "\(self.posterBaseUrl)\(posterUrl)")
         self.imagePoster.kf.indicatorType = .activity
-        self.imagePoster.kf.setImage(with: posterUrl)
+        self.imagePoster.kf.setImage(with: posterUrl, placeholder: UIImage(named: placeholderText))
         self.titleLabel.text = title
         self.descriptionLabel.text = description
         self.dateLabel.text = date
