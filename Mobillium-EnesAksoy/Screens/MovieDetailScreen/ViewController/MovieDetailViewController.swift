@@ -93,7 +93,7 @@ extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let lenght = self.collectionView.frame.height
-        return CGSize(width: lenght - 10, height: lenght)
+        return CGSize(width: 70, height: lenght)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

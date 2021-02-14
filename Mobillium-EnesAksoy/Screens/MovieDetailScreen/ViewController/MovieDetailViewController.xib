@@ -33,7 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GPO-4j-Egg">
-                    <rect key="frame" x="10" y="275" width="355" height="244"/>
+                    <rect key="frame" x="10" y="275" width="355" height="220.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -63,7 +63,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7b-SS-Zeh">
-                    <rect key="frame" x="5" y="524" width="365" height="30"/>
+                    <rect key="frame" x="5" y="500.5" width="365" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.02.20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLV-mc-qgB">
                             <rect key="frame" x="257" y="8" width="45" height="14"/>
@@ -111,12 +111,18 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbs-jW-zEW">
-                    <rect key="frame" x="2" y="556" width="371" height="1"/>
+                    <rect key="frame" x="2" y="532.5" width="371" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="tfO-KL-ilj"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shA-U3-u3x">
+                    <rect key="frame" x="10" y="541.5" width="110.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -127,7 +133,6 @@
                 <constraint firstAttribute="trailing" secondItem="GPO-4j-Egg" secondAttribute="trailing" constant="10" id="86M-kl-pi1"/>
                 <constraint firstItem="z7X-ks-Vq1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BlK-Ut-e1m"/>
                 <constraint firstItem="C9o-uU-gdV" firstAttribute="top" secondItem="n0k-wB-tXt" secondAttribute="bottom" constant="10" id="C77-Tf-BJV"/>
-                <constraint firstItem="z7X-ks-Vq1" firstAttribute="top" secondItem="j7b-SS-Zeh" secondAttribute="bottom" constant="10" id="GcW-do-5KH"/>
                 <constraint firstItem="n0k-wB-tXt" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.35" id="JkN-86-9yZ"/>
                 <constraint firstAttribute="trailing" secondItem="j7b-SS-Zeh" secondAttribute="trailing" constant="5" id="MCh-nT-96p"/>
                 <constraint firstItem="n0k-wB-tXt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OpU-hW-Myd"/>
@@ -138,8 +143,11 @@
                 <constraint firstItem="n0k-wB-tXt" firstAttribute="top" secondItem="EaO-Ve-Y63" secondAttribute="top" id="hrY-ft-WzI"/>
                 <constraint firstAttribute="trailing" secondItem="Tbs-jW-zEW" secondAttribute="trailing" constant="2" id="jMh-dr-w5G"/>
                 <constraint firstAttribute="trailing" secondItem="n0k-wB-tXt" secondAttribute="trailing" id="mW5-Tu-aMT"/>
+                <constraint firstItem="shA-U3-u3x" firstAttribute="leading" secondItem="EaO-Ve-Y63" secondAttribute="leading" constant="10" id="pfu-En-dJH"/>
                 <constraint firstItem="Tbs-jW-zEW" firstAttribute="top" secondItem="j7b-SS-Zeh" secondAttribute="bottom" constant="2" id="trd-Uo-EXa"/>
                 <constraint firstItem="GPO-4j-Egg" firstAttribute="top" secondItem="C9o-uU-gdV" secondAttribute="bottom" constant="10" id="xKW-QG-Zcv"/>
+                <constraint firstItem="shA-U3-u3x" firstAttribute="top" secondItem="Tbs-jW-zEW" secondAttribute="bottom" constant="8" id="ytV-5c-0ig"/>
+                <constraint firstItem="z7X-ks-Vq1" firstAttribute="top" secondItem="shA-U3-u3x" secondAttribute="bottom" constant="2" id="zrd-2C-wJM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="EaO-Ve-Y63"/>
             <point key="canvasLocation" x="139" y="103"/>
