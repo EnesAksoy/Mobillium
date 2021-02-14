@@ -11,6 +11,9 @@ import Foundation
 class MovieDetailViewModel: NSObject {
     
     // MARK: - Proporties
+    
+    private let dateFormat = "yyyy-MM-dd"
+    private let newDateFormat = "dd.MM.yy"
     private let movieDetailEndPoint = "/movie/\(ObjectStore.shared.movieId ?? 0)"
     private let similarMoviesEndPoint = "/movie/\(ObjectStore.shared.movieId ?? 0)/similar"
     private var apiService: APIService!
@@ -20,6 +23,8 @@ class MovieDetailViewModel: NSObject {
     
     var delegate: MovieDetailViewModelDelegate?
     
+    // MARK: - Life Cycles
+    
     override init() {
         super.init()
         self.apiService = APIService()
@@ -27,14 +32,15 @@ class MovieDetailViewModel: NSObject {
     }
     
     // MARK: - Service Call Methods
+    
     private func getMovieDetailData() {
         apiService.apiToGetData(isResult: false, endPoint: self.movieDetailEndPoint) { [weak self] _, error, responseModel in
             guard let self = self else { return }
             if var response = responseModel, error.isEmpty {
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
+                dateFormatter.dateFormat = self.dateFormat
                 let releaseDate = dateFormatter.date(from: (response.releaseDate)!) ?? Date()
-                dateFormatter.dateFormat = "dd.MM.yy"
+                dateFormatter.dateFormat = self.newDateFormat
                 let myString = dateFormatter.string(from: releaseDate)
                 response.releaseDate = myString
                 self.movieDetailResponse = response

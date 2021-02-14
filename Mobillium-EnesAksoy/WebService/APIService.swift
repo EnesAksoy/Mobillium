@@ -11,9 +11,13 @@ import Alamofire
 
 class APIService:  NSObject {
     
+    // MARK: - Constans
+    
     private let baseUrlString = "https://api.themoviedb.org/3"
     private let apikey = "283d41c0628d9e3fa8d6b97935ca5220"
     private let resultModel: [ResultModel] = []
+    
+    // MARK: - Connect Api
     
     func apiToGetData(isResult: Bool = true, search: String = "", endPoint: String, completion : @escaping (_ responseModel: ResponseModel?, _ error: String, _ resultModel: ResultModel?) -> ()) {
         var apiUrl = "\(baseUrlString)\(endPoint)?api_key=\(apikey)"

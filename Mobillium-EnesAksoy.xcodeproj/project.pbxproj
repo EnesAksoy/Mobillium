@@ -182,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				8F21CBB725D87D040061F17E /* ViewController */,
+				8F21CBB925D87D330061F17E /* WebViewScreenController.xib */,
 			);
 			path = WebViewScreen;
 			sourceTree = "<group>";
@@ -190,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				8F21CBB825D87D330061F17E /* WebViewScreenController.swift */,
-				8F21CBB925D87D330061F17E /* WebViewScreenController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

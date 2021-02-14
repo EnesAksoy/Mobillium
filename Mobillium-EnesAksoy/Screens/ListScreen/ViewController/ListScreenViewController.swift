@@ -11,6 +11,15 @@ import Kingfisher
 
 class ListScreenViewController: UIViewController {
     
+    // MARK: - Constans
+    
+    private let listTableViewCellId = "ListTableViewCell"
+    private let sliderViewNibName = "SliderView"
+    private let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
+    private let notificationName = "NotificationIdentifier"
+    private let zeroInt = 0
+    private let zeroCGFloat: CGFloat = 0
+    
     // MARK: - Outlests
     
     @IBOutlet weak var searchTextField: UITextField!
@@ -52,7 +61,7 @@ class ListScreenViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    // MARK: -  
+    // MARK: - Get Object Store Data
     
     private func getObjectStoreData() {
         self.viewModel.getObjectStoreData { nowPlayingData, upComingData in
@@ -66,31 +75,40 @@ class ListScreenViewController: UIViewController {
     private func tableViewConfiguration() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
+        self.tableView.register(UINib(nibName: self.listTableViewCellId, bundle: nil),
+                                forCellReuseIdentifier: self.listTableViewCellId)
     }
     
     // MARK: - Page Controller Configuration
     
      private func pageControllerConfiguration() {
         self.pageControl.numberOfPages = (nowPlayingData?.results.count)!
-        self.pageControl.currentPage = 0
+        self.pageControl.currentPage = self.zeroInt
         self.pageControl.currentPageIndicatorTintColor = .white
         self.pageControl.pageIndicatorTintColor = .lightGray
     }
     
     // MARK: - Set Slider View
+    
     private func setSliderView(slides: [SliderView]) {
         self.scrollView.contentSize = CGSize(width: view.bounds.width * CGFloat(slides.count), height: self.subSliderView.frame.height)
-        for i in 0 ..< slides.count {
-            slides[i].frame = CGRect(x: view.bounds.width * CGFloat(i), y: 0, width: scrollView.frame.width, height: self.subSliderView.frame.height)
+        for i in self.zeroInt ..< slides.count {
+            slides[i].frame = CGRect(x: view.bounds.width * CGFloat(i),
+                                     y: self.zeroCGFloat,
+                                     width: scrollView.frame.width,
+                                     height: self.subSliderView.frame.height)
             self.scrollView.addSubview(slides[i])
         }
     }
     
+    // MARK: - Slider Page Create Method
+    
     private func sliders() -> [SliderView] {
         for i in 0...((self.nowPlayingData?.results.count)! - 1) {
-            let slide: SliderView = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil)?.first as! SliderView
-            let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(nowPlayingData?.results[i].backdropPath ?? "")")
+            let slide: SliderView = Bundle.main.loadNibNamed(self.sliderViewNibName,
+                                                             owner: self,
+                                                             options: nil)?.first as! SliderView
+            let imageUrl = URL(string: "\(self.imageBaseUrl)\(nowPlayingData?.results[i].backdropPath ?? "")")
             slide.descriptionLabel.text = nowPlayingData?.results[i].title
             slide.imageView.kf.indicatorType = .activity
             slide.imageView.kf.setImage(with: imageUrl)
@@ -98,6 +116,8 @@ class ListScreenViewController: UIViewController {
         }
         return slides
     }
+    
+    // MARK: - Add Subview
     
     private func searchTableViewAddSubview() {
         self.dismissSearchView()
@@ -110,6 +130,8 @@ class ListScreenViewController: UIViewController {
         searchView.didMove(toParent: self)
     }
     
+    // MARK: - Dismiss Search View
+    
     private func dismissSearchView() {
         if let viewWithTag = self.view.viewWithTag(5252) {
             viewWithTag.removeFromSuperview()
@@ -119,6 +141,7 @@ class ListScreenViewController: UIViewController {
 }
 
 // MARK: - ScrollView Delegate
+
 extension ListScreenViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == self.scrollView {
@@ -139,12 +162,19 @@ extension ListScreenViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.listTableViewCellId,
+                                                 for: indexPath) as! ListTableViewCell
         cell.configureCell(posterUrl: (self.upComingData?.results[indexPath.row].posterPath)!,
                            title: (self.upComingData?.results[indexPath.row].title)!,
                            description: (self.upComingData?.results[indexPath.row].overview)!,
                            date: (self.upComingData?.results[indexPath.row].releaseDate)!)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        ObjectStore.shared.movieId = self.upComingData?.results[indexPath.row].id
+        let vc = MovieDetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -156,21 +186,17 @@ extension ListScreenViewController: UITextFieldDelegate {
         
         let currentString: NSString = textField.text! as NSString
         var replacedString: String?
-        
         let newString: NSString = currentString.replacingCharacters(in: range, with: replacedString ?? "\(string)") as NSString
         
         if newString.length >= 2 {
+            
             replacedString = string.replacingOccurrences(of: " ", with: "+")
-            
             searchListView.isHidden = false
-            
-            NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: newString as String)
-            
+            NotificationCenter.default.post(name: Notification.Name(self.notificationName), object: newString as String)
             self.searchTableViewAddSubview()
-        }else if newString.length == 0 {
+        } else if newString.length == 0 {
             self.dismissSearchView()
         }
-        print("newString::::: \(newString)")
         return true
     }
 }

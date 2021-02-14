@@ -10,8 +10,16 @@ import UIKit
 import Kingfisher
 
 class MovieDetailViewController: UIViewController {
+    
+    // MARK: - Constants
+    
+    private let errorKey = "MessageTitle1"
+    private let similarMoviesCollectionViewCellId = "SimilarMoviesCollectionViewCell"
+    private let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
+    private let placeholderText = "placeholder"
 
     // MARK: - Outlets
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var starCountLabel: UILabel!
@@ -20,14 +28,13 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var posterImage: UIImageView!
     
     // MARK: - Proporties
+    
     private var viewModel: MovieDetailViewModel!
     private var movieDetailResponse: ResultModel?
     private var similarMoviesData: ResponseModel?
     
-    // MARK: - Constants
-       private let errorKey = "MessageTitle1"
-    
     // MARK: - Life Cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -38,10 +45,12 @@ class MovieDetailViewController: UIViewController {
         self.viewModel.delegate = self
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.collectionView.register(UINib(nibName: "SimilarMoviesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SimilarMoviesCollectionViewCell")
+        self.collectionView.register(UINib(nibName: self.similarMoviesCollectionViewCellId, bundle: nil),
+                                     forCellWithReuseIdentifier: self.similarMoviesCollectionViewCellId)
     }
     
-    //MARK:- Actions
+    // MARK: - Actions
+    
     @IBAction func imdbButtonClicked(_ sender: Any) {
         ObjectStore.shared.imdbId = self.movieDetailResponse?.imdbId
         let vc = WebViewScreenController()
@@ -49,21 +58,21 @@ class MovieDetailViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
     private func updateView() {
         self.posterImage.kf.indicatorType = .activity
-        let urlPoster = URL(string: "https://image.tmdb.org/t/p/w500\(self.movieDetailResponse?.backdropPath ?? "")")
-        self.posterImage.kf.setImage(with: urlPoster, placeholder: UIImage(named: "placeholder"))
+        let urlPoster = URL(string: "\(self.imageBaseUrl)\(self.movieDetailResponse?.backdropPath ?? "")")
+        self.posterImage.kf.setImage(with: urlPoster, placeholder: UIImage(named: self.placeholderText))
         self.movieTitle.text = self.movieDetailResponse?.title
         self.movieDescription.text = self.movieDetailResponse?.overview
         self.starCountLabel.text = "\(self.movieDetailResponse?.starCount ?? 0)"
         self.dateLabel.text = self.movieDetailResponse?.releaseDate
         self.collectionView.reloadData()
     }
-    
-    
 }
 
-// MARK:- Movie Detail View Model Delegate
+// MARK: - Movie Detail View Model Delegate
+
 extension MovieDetailViewController: MovieDetailViewModelDelegate {
     func updateView(movieDetailResponse: ResultModel?, similarMoviesData: ResponseModel?, errorText: String) {
         LoadingView.removeLoadingView()
@@ -78,13 +87,15 @@ extension MovieDetailViewController: MovieDetailViewModelDelegate {
 }
 
 //MARK: - UICollectionView Delegate Methods
+
 extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.similarMoviesData?.results.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SimilarMoviesCollectionViewCell", for: indexPath) as! SimilarMoviesCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.similarMoviesCollectionViewCellId,
+                                                      for: indexPath) as! SimilarMoviesCollectionViewCell
         cell.cellConfigure(movieTitle: self.similarMoviesData?.results[indexPath.row].title ?? "",
                            date: self.similarMoviesData?.results[indexPath.row].releaseDate ?? "",
                            moviePoster: self.similarMoviesData?.results[indexPath.row].posterPath ?? "")

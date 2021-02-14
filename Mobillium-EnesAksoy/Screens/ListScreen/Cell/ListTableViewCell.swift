@@ -10,33 +10,27 @@ import UIKit
 import Kingfisher
 
 class ListTableViewCell: UITableViewCell {
-
+    
+    // MARK: - Constans
+    
+    private let posterBaseUrl = "https://image.tmdb.org/t/p/w500"
+    private let imageCornerRadius: CGFloat = 6
+    
     // MARK: - Outlets
-    @IBOutlet weak var imagePoster: UIImageView! {
+    
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var imagePoster: UIImageView! {
         didSet {
-            imagePoster.layer.cornerRadius = 6
+            imagePoster.layer.cornerRadius = self.imageCornerRadius
         }
-    }
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     // MARK: - Configure Cell Method
     
     func configureCell(posterUrl: String, title: String, description: String, date: String) {
-        let posterUrl = URL(string: "https://image.tmdb.org/t/p/w500\(posterUrl)")
+        let posterUrl = URL(string: "\(self.posterBaseUrl)\(posterUrl)")
         self.imagePoster.kf.indicatorType = .activity
         self.imagePoster.kf.setImage(with: posterUrl)
         self.titleLabel.text = title

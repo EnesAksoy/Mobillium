@@ -10,9 +10,15 @@ import Foundation
 
 class ListScreenViewModel: NSObject {
     
+    // MARK: - Constans
+    
+    private let dateFormat = "yyyy-MM-dd"
+    private let newDateFormat = "dd.MM.yy"
+    
+    // MARK: - Life Cycles
+    
     override init() {
         super.init()
-        
     }
     
     // MARK: - Get ObjectStore Data
@@ -23,9 +29,9 @@ class ListScreenViewModel: NSObject {
             
             for (index, result) in upComingData.results.enumerated() {
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
+                dateFormatter.dateFormat = self.dateFormat
                 let releaseDate = dateFormatter.date(from: result.releaseDate!) ?? Date()
-                dateFormatter.dateFormat = "dd.MM.yy"
+                dateFormatter.dateFormat = self.newDateFormat
                 let myString = dateFormatter.string(from: releaseDate)
                 upComingData.results[index].releaseDate = myString
                 ObjectStore.shared.upComingData = upComingData

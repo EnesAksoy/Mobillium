@@ -38,8 +38,6 @@ extension SplashScreenViewController: SplashScreenViewModelDelegate {
         
         ObjectStore.shared.nowPlayingData = nowPlayingData
         ObjectStore.shared.upComingData = upComingData
-         
-        
         let storyBoard : UIStoryboard = UIStoryboard(name: self.storyboardName, bundle:nil)
         let nextViewController = storyBoard.instantiateInitialViewController() as! UINavigationController
         nextViewController.modalPresentationStyle = .fullScreen

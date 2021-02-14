@@ -10,10 +10,11 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    // MARK: - Proporties
-    private var viewModel: ListScreenViewController!
-    private var response: ResponseModel?
-    private var apiService: APIService!
+    // MARK: - Constans
+    
+    private let searchListTableViewCellId = "SearchListTableViewCell"
+    private let notificationIdentifierName = "NotificationIdentifier"
+    private let endPoint = "/search/movie"
     
     // MARK: - Outlets
     
@@ -21,29 +22,41 @@ class SearchViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.register(UINib(nibName: "SearchListTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchListTableViewCell")
+            tableView.register(UINib(nibName: self.searchListTableViewCellId, bundle: nil),
+                               forCellReuseIdentifier: self.searchListTableViewCellId)
         }
     }
     
+    // MARK: - Proporties
+    
+    private var viewModel: ListScreenViewController!
+    private var response: ResponseModel?
+    private var apiService: APIService!
+    
+    // MARK: - Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.apiService = APIService()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
-
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.methodOfReceivedNotification(notification:)),
+                                               name: Notification.Name("\(self.notificationIdentifierName)"),
+                                               object: nil)
     }
     
-    // MARK: - functions
-   @objc func methodOfReceivedNotification(notification: Notification) {
-       apiService.apiToGetData(search: notification.object! as! String, endPoint: "/search/movie") { (response, errorString, _) in
-           self.response = response
-           self.tableView.reloadData()
-       }
-   }
+    // MARK: - Notification Method
     
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        apiService.apiToGetData(search: notification.object! as! String,
+                                endPoint: self.endPoint) { [weak self] response, errorString, _ in
+                                    self?.response = response
+                                    self?.tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - TableView Delegate Methods
+
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +64,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchListTableViewCell", for: indexPath) as! SearchListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListTableViewCellId, for: indexPath) as! SearchListTableViewCell
         cell.cellConfiguration(title: self.response?.results[indexPath.row].title)
         return cell
     }
@@ -62,5 +75,3 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-

@@ -26,6 +26,8 @@ class SplashScreenViewModel: NSObject {
     private var upComingResponse: ResponseModel?
     private var error: String = ""
     
+    // MARK: - Life Cycles
+    
     override init() {
         super.init()
         self.apiService = APIService()
