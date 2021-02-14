@@ -15,25 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iP-f9-uvR">
-                                <rect key="frame" x="40" y="49" width="295" height="25"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iP-f9-uvR" customClass="MobilliumView" customModule="Mobillium_EnesAksoy" customModuleProvider="target">
+                                <rect key="frame" x="8" y="49" width="359" height="25"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Am1-C3-U5H">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Am1-C3-U5H">
                                         <rect key="frame" x="2" y="2.5" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="HG6-gp-c09"/>
                                             <constraint firstAttribute="height" constant="20" id="jvz-OL-EaL"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="bIy-B1-6j8">
-                                        <rect key="frame" x="24" y="0.0" width="271" height="25"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="bIy-B1-6j8" customClass="MobilliumTextField" customModule="Mobillium_EnesAksoy" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="0.0" width="329" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableKey" value="SearchText"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="bIy-B1-6j8" firstAttribute="leading" secondItem="Am1-C3-U5H" secondAttribute="trailing" constant="2" id="Qgo-8Q-7YB"/>
+                                    <constraint firstItem="bIy-B1-6j8" firstAttribute="leading" secondItem="Am1-C3-U5H" secondAttribute="trailing" constant="8" id="Qgo-8Q-7YB"/>
                                     <constraint firstItem="bIy-B1-6j8" firstAttribute="top" secondItem="6iP-f9-uvR" secondAttribute="top" id="Rce-F6-S1H"/>
                                     <constraint firstItem="Am1-C3-U5H" firstAttribute="leading" secondItem="6iP-f9-uvR" secondAttribute="leading" constant="2" id="TtL-pr-N65"/>
                                     <constraint firstItem="Am1-C3-U5H" firstAttribute="centerY" secondItem="6iP-f9-uvR" secondAttribute="centerY" id="aeK-na-MDj"/>
@@ -41,6 +44,11 @@
                                     <constraint firstAttribute="trailing" secondItem="bIy-B1-6j8" secondAttribute="trailing" id="iFP-jS-ay6"/>
                                     <constraint firstAttribute="bottom" secondItem="bIy-B1-6j8" secondAttribute="bottom" id="prO-24-uOC"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kt3-X9-HgS">
                                 <rect key="frame" x="0.0" y="84" width="375" height="267"/>
@@ -79,7 +87,7 @@
                         <constraints>
                             <constraint firstItem="Yuh-cX-qY4" firstAttribute="trailing" secondItem="Kt3-X9-HgS" secondAttribute="trailing" id="5xl-eH-zfr"/>
                             <constraint firstItem="HhU-sa-eck" firstAttribute="height" secondItem="nan-8S-Fc9" secondAttribute="height" multiplier="0.5" id="86P-eA-L0d"/>
-                            <constraint firstItem="6iP-f9-uvR" firstAttribute="leading" secondItem="Yuh-cX-qY4" secondAttribute="leading" constant="40" id="A9x-Oe-fSL"/>
+                            <constraint firstItem="6iP-f9-uvR" firstAttribute="leading" secondItem="Yuh-cX-qY4" secondAttribute="leading" constant="8" id="A9x-Oe-fSL"/>
                             <constraint firstItem="Kt3-X9-HgS" firstAttribute="leading" secondItem="Yuh-cX-qY4" secondAttribute="leading" id="AFf-ec-fwA"/>
                             <constraint firstItem="Yuh-cX-qY4" firstAttribute="bottom" secondItem="my3-C7-Y08" secondAttribute="bottom" id="Ai8-oU-yMQ"/>
                             <constraint firstItem="my3-C7-Y08" firstAttribute="top" secondItem="jLm-cK-cDR" secondAttribute="bottom" constant="5" id="Cwi-R8-o1d"/>
@@ -93,7 +101,7 @@
                             <constraint firstItem="jLm-cK-cDR" firstAttribute="centerX" secondItem="Kt3-X9-HgS" secondAttribute="centerX" id="eyz-yx-W3e"/>
                             <constraint firstItem="Kt3-X9-HgS" firstAttribute="height" secondItem="nan-8S-Fc9" secondAttribute="height" multiplier="0.4" id="ij5-z9-LeP"/>
                             <constraint firstItem="my3-C7-Y08" firstAttribute="top" secondItem="Kt3-X9-HgS" secondAttribute="bottom" id="jyr-rp-PUv"/>
-                            <constraint firstItem="Yuh-cX-qY4" firstAttribute="trailing" secondItem="6iP-f9-uvR" secondAttribute="trailing" constant="40" id="phK-fN-4VX"/>
+                            <constraint firstItem="Yuh-cX-qY4" firstAttribute="trailing" secondItem="6iP-f9-uvR" secondAttribute="trailing" constant="8" id="phK-fN-4VX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yuh-cX-qY4"/>
                     </view>
@@ -130,4 +138,7 @@
             <point key="canvasLocation" x="-252.17391304347828" y="-127.23214285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="searchIcon" width="512" height="512"/>
+    </resources>
 </document>

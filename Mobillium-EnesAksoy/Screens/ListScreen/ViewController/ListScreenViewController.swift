@@ -11,8 +11,6 @@ import Kingfisher
 
 class ListScreenViewController: UIViewController {
     
-    
-    
     // MARK: - Outlests
     
     @IBOutlet weak var searchTextField: UITextField!
@@ -52,7 +50,7 @@ class ListScreenViewController: UIViewController {
     // MARK: -  
     
     private func getObjectStoreData() {
-        self.viewModel.getObjectStoreData { (nowPlayingData, upComingData) in
+        self.viewModel.getObjectStoreData { nowPlayingData, upComingData in
             self.nowPlayingData = nowPlayingData
             self.upComingData = upComingData
         }
@@ -137,12 +135,16 @@ extension ListScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
-        cell.configureCell(posterUrl:   (self.upComingData?.results[indexPath.row].posterPath)!,                 title:       (self.upComingData?.results[indexPath.row].title)!,                      description: (self.upComingData?.results[indexPath.row].overview)!,                   date:        (self.upComingData?.results[indexPath.row].releaseDate)!)
+        cell.configureCell(posterUrl: (self.upComingData?.results[indexPath.row].posterPath)!,
+                           title: (self.upComingData?.results[indexPath.row].title)!,
+                           description: (self.upComingData?.results[indexPath.row].overview)!,
+                           date: (self.upComingData?.results[indexPath.row].releaseDate)!)
         return cell
     }
 }
 
 // MARK:- UITextFieldDelegate Method
+
 extension ListScreenViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -153,7 +155,6 @@ extension ListScreenViewController: UITextFieldDelegate {
         let newString: NSString = currentString.replacingCharacters(in: range, with: replacedString ?? "\(string)") as NSString
         
         if newString.length >= 2 {
-//            print("newString::::: \(newString)")
             replacedString = string.replacingOccurrences(of: " ", with: "+")
             
             searchListView.isHidden = false

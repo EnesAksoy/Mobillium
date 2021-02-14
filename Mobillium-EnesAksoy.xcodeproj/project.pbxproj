@@ -17,6 +17,8 @@
 		8F21CBBA25D87D330061F17E /* WebViewScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBB825D87D330061F17E /* WebViewScreenController.swift */; };
 		8F21CBBB25D87D330061F17E /* WebViewScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F21CBB925D87D330061F17E /* WebViewScreenController.xib */; };
 		8F21CBBD25D885E60061F17E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F21CBBC25D885E60061F17E /* WebKit.framework */; };
+		8F21CBC025D9268F0061F17E /* MobilliumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBBF25D9268F0061F17E /* MobilliumView.swift */; };
+		8F21CBC225D928BB0061F17E /* MobilliumTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBC125D928BB0061F17E /* MobilliumTextField.swift */; };
 		8F79FDF025D719B700238486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FDEF25D719B700238486 /* AppDelegate.swift */; };
 		8F79FDF225D719B700238486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FDF125D719B700238486 /* SceneDelegate.swift */; };
 		8F79FDF925D719BB00238486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FDF825D719BB00238486 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		8F21CBB825D87D330061F17E /* WebViewScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreenController.swift; sourceTree = "<group>"; };
 		8F21CBB925D87D330061F17E /* WebViewScreenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewScreenController.xib; sourceTree = "<group>"; };
 		8F21CBBC25D885E60061F17E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8F21CBBF25D9268F0061F17E /* MobilliumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumView.swift; sourceTree = "<group>"; };
+		8F21CBC125D928BB0061F17E /* MobilliumTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumTextField.swift; sourceTree = "<group>"; };
 		8F79FDEC25D719B700238486 /* Mobillium-EnesAksoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobillium-EnesAksoy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F79FDEF25D719B700238486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F79FDF125D719B700238486 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		8F21CBBE25D9265E0061F17E /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				8F21CBBF25D9268F0061F17E /* MobilliumView.swift */,
+				8F21CBC125D928BB0061F17E /* MobilliumTextField.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		8F79FDE325D719B700238486 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 		8F79FE0325D71BEB00238486 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8F21CBBE25D9265E0061F17E /* Controls */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -268,10 +282,10 @@
 		8F79FE0825D71C2C00238486 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				8F21CBB625D87CE60061F17E /* WebViewScreen */,
-				8F21CBA225D845270061F17E /* MovieDetailScreen */,
 				8F79FE2D25D7C98000238486 /* ListScreen */,
+				8F21CBA225D845270061F17E /* MovieDetailScreen */,
 				8F79FE0A25D71C9A00238486 /* SplashScreen */,
+				8F21CBB625D87CE60061F17E /* WebViewScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -544,10 +558,12 @@
 				8F79FE1725D728E200238486 /* ResultModel.swift in Sources */,
 				8F21CBB025D866260061F17E /* LoadingView.swift in Sources */,
 				8F79FE2025D7BE6A00238486 /* SplashScreenViewModel.swift in Sources */,
+				8F21CBC025D9268F0061F17E /* MobilliumView.swift in Sources */,
 				8F79FE5125D8229400238486 /* SearchViewController.swift in Sources */,
 				8F79FE1925D72AF500238486 /* ResponseModel.swift in Sources */,
 				8F79FE3825D7CD9C00238486 /* ListScreenViewModel.swift in Sources */,
 				8F79FE3125D7CACA00238486 /* ListScreenViewController.swift in Sources */,
+				8F21CBC225D928BB0061F17E /* MobilliumTextField.swift in Sources */,
 				8F79FDF225D719B700238486 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
