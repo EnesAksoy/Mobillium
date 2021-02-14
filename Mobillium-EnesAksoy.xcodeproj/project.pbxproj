@@ -14,6 +14,9 @@
 		8F21CBB025D866260061F17E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBAF25D866260061F17E /* LoadingView.swift */; };
 		8F21CBB425D86CD00061F17E /* SimilarMoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBB225D86CD00061F17E /* SimilarMoviesCollectionViewCell.swift */; };
 		8F21CBB525D86CD00061F17E /* SimilarMoviesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F21CBB325D86CD00061F17E /* SimilarMoviesCollectionViewCell.xib */; };
+		8F21CBBA25D87D330061F17E /* WebViewScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBB825D87D330061F17E /* WebViewScreenController.swift */; };
+		8F21CBBB25D87D330061F17E /* WebViewScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F21CBB925D87D330061F17E /* WebViewScreenController.xib */; };
+		8F21CBBD25D885E60061F17E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F21CBBC25D885E60061F17E /* WebKit.framework */; };
 		8F79FDF025D719B700238486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FDEF25D719B700238486 /* AppDelegate.swift */; };
 		8F79FDF225D719B700238486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FDF125D719B700238486 /* SceneDelegate.swift */; };
 		8F79FDF925D719BB00238486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FDF825D719BB00238486 /* Assets.xcassets */; };
@@ -52,6 +55,9 @@
 		8F21CBAF25D866260061F17E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8F21CBB225D86CD00061F17E /* SimilarMoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarMoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F21CBB325D86CD00061F17E /* SimilarMoviesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarMoviesCollectionViewCell.xib; sourceTree = "<group>"; };
+		8F21CBB825D87D330061F17E /* WebViewScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreenController.swift; sourceTree = "<group>"; };
+		8F21CBB925D87D330061F17E /* WebViewScreenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewScreenController.xib; sourceTree = "<group>"; };
+		8F21CBBC25D885E60061F17E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8F79FDEC25D719B700238486 /* Mobillium-EnesAksoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobillium-EnesAksoy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F79FDEF25D719B700238486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F79FDF125D719B700238486 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F21CBBD25D885E60061F17E /* WebKit.framework in Frameworks */,
 				BD040C1BAE8F62B2FD575F1F /* Pods_Mobillium_EnesAksoy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +113,7 @@
 		30FB63F027AFBBB0C760EF14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F21CBBC25D885E60061F17E /* WebKit.framework */,
 				6E5F77FF91E740C27296F5B4 /* Pods_Mobillium_EnesAksoy.framework */,
 			);
 			name = Frameworks;
@@ -162,6 +170,23 @@
 				8F21CBB325D86CD00061F17E /* SimilarMoviesCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8F21CBB625D87CE60061F17E /* WebViewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8F21CBB725D87D040061F17E /* ViewController */,
+			);
+			path = WebViewScreen;
+			sourceTree = "<group>";
+		};
+		8F21CBB725D87D040061F17E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8F21CBB825D87D330061F17E /* WebViewScreenController.swift */,
+				8F21CBB925D87D330061F17E /* WebViewScreenController.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8F79FDE325D719B700238486 = {
@@ -243,6 +268,7 @@
 		8F79FE0825D71C2C00238486 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8F21CBB625D87CE60061F17E /* WebViewScreen */,
 				8F21CBA225D845270061F17E /* MovieDetailScreen */,
 				8F79FE2D25D7C98000238486 /* ListScreen */,
 				8F79FE0A25D71C9A00238486 /* SplashScreen */,
@@ -438,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F21CBA725D845530061F17E /* MovieDetailViewController.xib in Resources */,
+				8F21CBBB25D87D330061F17E /* WebViewScreenController.xib in Resources */,
 				8F79FE4D25D80FBD00238486 /* SearchListTableViewCell.xib in Resources */,
 				8F79FDFC25D719BB00238486 /* LaunchScreen.storyboard in Resources */,
 				8F79FE3D25D7D75B00238486 /* SliderView.xib in Resources */,
@@ -507,6 +534,7 @@
 				8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */,
 				8F21CBAD25D8525E0061F17E /* MovieDetailViewModelDelegate.swift in Sources */,
 				8F79FE1225D7264000238486 /* APIService.swift in Sources */,
+				8F21CBBA25D87D330061F17E /* WebViewScreenController.swift in Sources */,
 				8F21CBA625D845530061F17E /* MovieDetailViewController.swift in Sources */,
 				8F79FE1E25D7BE3200238486 /* SplashScreenViewModelDelegate.swift in Sources */,
 				8F21CBB425D86CD00061F17E /* SimilarMoviesCollectionViewCell.swift in Sources */,
