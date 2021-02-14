@@ -79,7 +79,7 @@
                                 <inset key="separatorInset" minX="6" minY="0.0" maxX="6" maxY="0.0"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhU-sa-eck">
-                                <rect key="frame" x="0.0" y="53" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="333.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -91,10 +91,10 @@
                             <constraint firstItem="Kt3-X9-HgS" firstAttribute="leading" secondItem="Yuh-cX-qY4" secondAttribute="leading" id="AFf-ec-fwA"/>
                             <constraint firstItem="Yuh-cX-qY4" firstAttribute="bottom" secondItem="my3-C7-Y08" secondAttribute="bottom" id="Ai8-oU-yMQ"/>
                             <constraint firstItem="my3-C7-Y08" firstAttribute="top" secondItem="jLm-cK-cDR" secondAttribute="bottom" constant="5" id="Cwi-R8-o1d"/>
+                            <constraint firstItem="HhU-sa-eck" firstAttribute="top" secondItem="6iP-f9-uvR" secondAttribute="bottom" id="D3n-m2-Lc3"/>
                             <constraint firstItem="Yuh-cX-qY4" firstAttribute="trailing" secondItem="HhU-sa-eck" secondAttribute="trailing" id="FYP-Lu-Afr"/>
                             <constraint firstItem="my3-C7-Y08" firstAttribute="leading" secondItem="Yuh-cX-qY4" secondAttribute="leading" id="Nit-u7-RXo"/>
                             <constraint firstItem="Yuh-cX-qY4" firstAttribute="trailing" secondItem="my3-C7-Y08" secondAttribute="trailing" id="PrR-A1-jGr"/>
-                            <constraint firstItem="HhU-sa-eck" firstAttribute="top" secondItem="6iP-f9-uvR" secondAttribute="bottom" constant="-21" id="QIm-ZE-oJI"/>
                             <constraint firstItem="HhU-sa-eck" firstAttribute="leading" secondItem="Yuh-cX-qY4" secondAttribute="leading" id="Sna-or-QBz"/>
                             <constraint firstItem="6iP-f9-uvR" firstAttribute="top" secondItem="Yuh-cX-qY4" secondAttribute="top" constant="5" id="cDk-Qf-dWa"/>
                             <constraint firstItem="Kt3-X9-HgS" firstAttribute="top" secondItem="6iP-f9-uvR" secondAttribute="bottom" constant="10" id="doD-tt-HAr"/>

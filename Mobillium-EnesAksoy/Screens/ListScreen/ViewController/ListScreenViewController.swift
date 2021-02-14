@@ -133,8 +133,7 @@ class ListScreenViewController: UIViewController {
         self.dismissSearchView()
         self.searchListView.isHidden = false
         self.addChild(searchView)
-        searchView.view.center = self.searchListView.center
-        searchView.view.frame = self.searchListView.frame
+        searchView.view.frame.size = self.searchListView.frame.size
         searchView.view.tag = 5252
         self.searchListView.addSubview(searchView.view)
         searchView.didMove(toParent: self)

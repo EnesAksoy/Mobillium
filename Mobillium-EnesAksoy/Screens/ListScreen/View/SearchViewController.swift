@@ -47,7 +47,9 @@ class SearchViewController: UIViewController {
     // MARK: - Notification Method
     
     @objc func methodOfReceivedNotification(notification: Notification) {
-        apiService.apiToGetData(search: notification.object! as! String,
+        let searchText = notification.object! as! String
+        let newSearhcText = searchText.replacingOccurrences(of: " ", with: "+")
+        apiService.apiToGetData(search: newSearhcText,
                                 endPoint: self.endPoint) { [weak self] response, errorString, _ in
                                     self?.response = response
                                     self?.tableView.reloadData()
