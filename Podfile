@@ -8,5 +8,6 @@ target 'Mobillium-EnesAksoy' do
   # Pods for Mobillium-EnesAksoy
 
 pod 'Alamofire', '~> 4.7.2'
+pod 'Kingfisher', '~> 5.0'
 
 end
