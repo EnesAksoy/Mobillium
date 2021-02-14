@@ -22,6 +22,11 @@
 		8F79FE2325D7C0A500238486 /* ObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE2225D7C0A500238486 /* ObjectStore.swift */; };
 		8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE2525D7C4C800238486 /* UIViewControllerExtensions.swift */; };
 		8F79FE2A25D7C56400238486 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FE2C25D7C56400238486 /* Localizable.strings */; };
+		8F79FE2F25D7CA2B00238486 /* ListScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FE2E25D7CA2B00238486 /* ListScreen.storyboard */; };
+		8F79FE3125D7CACA00238486 /* ListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE3025D7CACA00238486 /* ListScreenViewController.swift */; };
+		8F79FE3825D7CD9C00238486 /* ListScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE3725D7CD9C00238486 /* ListScreenViewModel.swift */; };
+		8F79FE4125D7E63600238486 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE3F25D7E63600238486 /* ListTableViewCell.swift */; };
+		8F79FE4225D7E63600238486 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FE4025D7E63600238486 /* ListTableViewCell.xib */; };
 		BD040C1BAE8F62B2FD575F1F /* Pods_Mobillium_EnesAksoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5F77FF91E740C27296F5B4 /* Pods_Mobillium_EnesAksoy.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +50,11 @@
 		8F79FE2225D7C0A500238486 /* ObjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectStore.swift; sourceTree = "<group>"; };
 		8F79FE2525D7C4C800238486 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		8F79FE2B25D7C56400238486 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8F79FE2E25D7CA2B00238486 /* ListScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListScreen.storyboard; sourceTree = "<group>"; };
+		8F79FE3025D7CACA00238486 /* ListScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreenViewController.swift; sourceTree = "<group>"; };
+		8F79FE3725D7CD9C00238486 /* ListScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreenViewModel.swift; sourceTree = "<group>"; };
+		8F79FE3F25D7E63600238486 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		8F79FE4025D7E63600238486 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		A310328FA661B6CA621463BC /* Pods-Mobillium-EnesAksoy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobillium-EnesAksoy.debug.xcconfig"; path = "Target Support Files/Pods-Mobillium-EnesAksoy/Pods-Mobillium-EnesAksoy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +174,7 @@
 		8F79FE0825D71C2C00238486 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8F79FE2D25D7C98000238486 /* ListScreen */,
 				8F79FE0A25D71C9A00238486 /* SplashScreen */,
 			);
 			path = Screens;
@@ -246,6 +257,43 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		8F79FE2D25D7C98000238486 /* ListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8F79FE3E25D7E61900238486 /* Cell */,
+				8F79FE3925D7D6D100238486 /* View */,
+				8F79FE3325D7CD3E00238486 /* ViewController */,
+				8F79FE3425D7CD4400238486 /* ViewModel */,
+				8F79FE2E25D7CA2B00238486 /* ListScreen.storyboard */,
+			);
+			path = ListScreen;
+			sourceTree = "<group>";
+		};
+		8F79FE3325D7CD3E00238486 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8F79FE3025D7CACA00238486 /* ListScreenViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8F79FE3425D7CD4400238486 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8F79FE3725D7CD9C00238486 /* ListScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8F79FE3E25D7E61900238486 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8F79FE3F25D7E63600238486 /* ListTableViewCell.swift */,
+				8F79FE4025D7E63600238486 /* ListTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,9 +355,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F79FDFC25D719BB00238486 /* LaunchScreen.storyboard in Resources */,
+				8F79FE2F25D7CA2B00238486 /* ListScreen.storyboard in Resources */,
 				8F79FE2A25D7C56400238486 /* Localizable.strings in Resources */,
 				8F79FE0E25D71F2800238486 /* SplashScreen.storyboard in Resources */,
 				8F79FDF925D719BB00238486 /* Assets.xcassets in Resources */,
+				8F79FE4225D7E63600238486 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,10 +418,13 @@
 				8F79FE1225D7264000238486 /* APIService.swift in Sources */,
 				8F79FE1E25D7BE3200238486 /* SplashScreenViewModelDelegate.swift in Sources */,
 				8F79FE2325D7C0A500238486 /* ObjectStore.swift in Sources */,
+				8F79FE4125D7E63600238486 /* ListTableViewCell.swift in Sources */,
 				8F79FE1725D728E200238486 /* ResultModel.swift in Sources */,
 				8F21CBB025D866260061F17E /* LoadingView.swift in Sources */,
 				8F79FE2025D7BE6A00238486 /* SplashScreenViewModel.swift in Sources */,
 				8F79FE1925D72AF500238486 /* ResponseModel.swift in Sources */,
+				8F79FE3825D7CD9C00238486 /* ListScreenViewModel.swift in Sources */,
+				8F79FE3125D7CACA00238486 /* ListScreenViewController.swift in Sources */,
 				8F79FDF225D719B700238486 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
