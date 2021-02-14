@@ -35,7 +35,7 @@ class SplashScreenViewModel: NSObject {
     // MARK: - Service Call Methods
     
     private func getNowPlayingData() {
-        apiService.apiToGetData(endPoint: self.nowPlayingEndPoint) { [weak self] responseModel, error in
+        apiService.apiToGetData(endPoint: self.nowPlayingEndPoint) { [weak self] responseModel, error, _  in
             guard let self = self else { return }
             if let response = responseModel, error.isEmpty {
                 self.nowPlayingResponse = response
@@ -47,7 +47,7 @@ class SplashScreenViewModel: NSObject {
     }
     
     private func getUpComingData() {
-        apiService.apiToGetData(endPoint: self.upComingEndPoint) { [weak self] responseModel, error in
+        apiService.apiToGetData(endPoint: self.upComingEndPoint) { [weak self] responseModel, error, _ in
             guard let self = self else { return }
             if let response = responseModel, error.isEmpty {
                 self.upComingResponse = response

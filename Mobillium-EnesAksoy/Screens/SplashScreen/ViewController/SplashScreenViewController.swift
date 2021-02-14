@@ -13,6 +13,7 @@ class SplashScreenViewController: UIViewController {
     // MARK: - Constants
     
     private let errorKey = "MessageTitle1"
+    private let storyboardName = "ListScreen"
     
     // MARK: - Properties
     
@@ -27,12 +28,21 @@ class SplashScreenViewController: UIViewController {
     }
 }
 
+// MARK: - Delegate Method
+
 extension SplashScreenViewController: SplashScreenViewModelDelegate {
     func updateView(nowPlayingData: ResponseModel?, upComingData: ResponseModel?, errorText: String) {
         if !errorText.isEmpty {
             self.createAlert(message: errorText, title: self.localizableGetString(forkey: self.errorKey))
         }
+        
         ObjectStore.shared.nowPlayingData = nowPlayingData
         ObjectStore.shared.upComingData = upComingData
+         
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: self.storyboardName, bundle:nil)
+        let nextViewController = storyBoard.instantiateInitialViewController() as! UINavigationController
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.present(nextViewController, animated:true, completion:nil)
     }
 }
