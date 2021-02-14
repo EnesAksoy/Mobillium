@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,11 +26,10 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="cjW-YK-1RH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7FX-LY-2sG"/>
-                <constraint firstItem="cjW-YK-1RH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Jhh-hC-xRV"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cjW-YK-1RH" secondAttribute="bottom" id="KQZ-Co-t8w"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cjW-YK-1RH" secondAttribute="trailing" id="hz2-cH-1Y3"/>
+                <constraint firstItem="cjW-YK-1RH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jhh-hC-xRV"/>
+                <constraint firstAttribute="bottom" secondItem="cjW-YK-1RH" secondAttribute="bottom" id="KQZ-Co-t8w"/>
+                <constraint firstAttribute="trailing" secondItem="cjW-YK-1RH" secondAttribute="trailing" id="hz2-cH-1Y3"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="342" y="-17"/>
         </view>
     </objects>
