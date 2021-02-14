@@ -14,5 +14,8 @@ class ObjectStore {
     
     var nowPlayingData: ResponseModel?
     var upComingData: ResponseModel?
+    
+    var movieId: Int?
+    var imdbId: String?
 }
 

@@ -9,5 +9,5 @@
 import Foundation
 
 struct ResponseModel: Codable {
-    let results: [ResultModel]
+    var results: [ResultModel]
 }

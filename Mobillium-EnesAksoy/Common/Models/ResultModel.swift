@@ -12,4 +12,15 @@ struct ResultModel: Codable {
     let title: String
     let overview: String
     let id: Int
+    let backdropPath: String?
+    let posterPath: String?
+    var releaseDate: String?
+    let starCount: Double?
+    let imdbId: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case title, overview, id, backdropPath = "backdrop_path", posterPath = "poster_path", releaseDate = "release_date", starCount = "vote_average", imdbId = "imdb_id"
+    }
 }
+
+
