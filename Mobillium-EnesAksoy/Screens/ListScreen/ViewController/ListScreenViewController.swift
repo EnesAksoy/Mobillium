@@ -34,7 +34,6 @@ class ListScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         self.apiService = APIService()
         self.viewModel = ListScreenViewModel()
         self.getObjectStoreData()
@@ -47,6 +46,12 @@ class ListScreenViewController: UIViewController {
         self.tableView.reloadData()
         self.searchListView.isHidden = true
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     // MARK: -  
     
     private func getObjectStoreData() {

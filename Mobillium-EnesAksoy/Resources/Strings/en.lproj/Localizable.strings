@@ -11,3 +11,7 @@
 "MessageTitle1" = "ERROR";
 "AlertButtonTitle" = "OK";
 "SearchText" = "Search";
+
+/* MovieDetailScreen */
+
+"movieDetailScreen.similarMoviesText" = "Similar Movies";

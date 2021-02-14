@@ -19,6 +19,7 @@
 		8F21CBBD25D885E60061F17E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F21CBBC25D885E60061F17E /* WebKit.framework */; };
 		8F21CBC025D9268F0061F17E /* MobilliumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBBF25D9268F0061F17E /* MobilliumView.swift */; };
 		8F21CBC225D928BB0061F17E /* MobilliumTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBC125D928BB0061F17E /* MobilliumTextField.swift */; };
+		8F21CBC425D929C80061F17E /* MobilliumLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21CBC325D929C70061F17E /* MobilliumLabel.swift */; };
 		8F79FDF025D719B700238486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FDEF25D719B700238486 /* AppDelegate.swift */; };
 		8F79FDF225D719B700238486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FDF125D719B700238486 /* SceneDelegate.swift */; };
 		8F79FDF925D719BB00238486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FDF825D719BB00238486 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		8F21CBBC25D885E60061F17E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8F21CBBF25D9268F0061F17E /* MobilliumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumView.swift; sourceTree = "<group>"; };
 		8F21CBC125D928BB0061F17E /* MobilliumTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumTextField.swift; sourceTree = "<group>"; };
+		8F21CBC325D929C70061F17E /* MobilliumLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilliumLabel.swift; sourceTree = "<group>"; };
 		8F79FDEC25D719B700238486 /* Mobillium-EnesAksoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobillium-EnesAksoy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F79FDEF25D719B700238486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F79FDF125D719B700238486 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				8F21CBAB25D8522C0061F17E /* Protocol */,
 				8F21CBA325D845420061F17E /* ViewController */,
 				8F21CBA825D84F010061F17E /* ViewModel */,
+				8F21CBA525D845530061F17E /* MovieDetailViewController.xib */,
 			);
 			path = MovieDetailScreen;
 			sourceTree = "<group>";
@@ -138,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				8F21CBA425D845530061F17E /* MovieDetailViewController.swift */,
-				8F21CBA525D845530061F17E /* MovieDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -196,8 +198,9 @@
 		8F21CBBE25D9265E0061F17E /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				8F21CBBF25D9268F0061F17E /* MobilliumView.swift */,
+				8F21CBC325D929C70061F17E /* MobilliumLabel.swift */,
 				8F21CBC125D928BB0061F17E /* MobilliumTextField.swift */,
+				8F21CBBF25D9268F0061F17E /* MobilliumView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				8F79FE3B25D7D74500238486 /* SliderView.swift in Sources */,
 				8F79FE1025D71F4600238486 /* SplashScreenViewController.swift in Sources */,
 				8F79FE4C25D80FBD00238486 /* SearchListTableViewCell.swift in Sources */,
+				8F21CBC425D929C80061F17E /* MobilliumLabel.swift in Sources */,
 				8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */,
 				8F21CBAD25D8525E0061F17E /* MovieDetailViewModelDelegate.swift in Sources */,
 				8F79FE1225D7264000238486 /* APIService.swift in Sources */,
