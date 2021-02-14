@@ -25,6 +25,8 @@
 		8F79FE2F25D7CA2B00238486 /* ListScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FE2E25D7CA2B00238486 /* ListScreen.storyboard */; };
 		8F79FE3125D7CACA00238486 /* ListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE3025D7CACA00238486 /* ListScreenViewController.swift */; };
 		8F79FE3825D7CD9C00238486 /* ListScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE3725D7CD9C00238486 /* ListScreenViewModel.swift */; };
+		8F79FE3B25D7D74500238486 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE3A25D7D74500238486 /* SliderView.swift */; };
+		8F79FE3D25D7D75B00238486 /* SliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FE3C25D7D75B00238486 /* SliderView.xib */; };
 		8F79FE4125D7E63600238486 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE3F25D7E63600238486 /* ListTableViewCell.swift */; };
 		8F79FE4225D7E63600238486 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F79FE4025D7E63600238486 /* ListTableViewCell.xib */; };
 		8F79FE4C25D80FBD00238486 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79FE4A25D80FBD00238486 /* SearchListTableViewCell.swift */; };
@@ -57,6 +59,8 @@
 		8F79FE2E25D7CA2B00238486 /* ListScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListScreen.storyboard; sourceTree = "<group>"; };
 		8F79FE3025D7CACA00238486 /* ListScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreenViewController.swift; sourceTree = "<group>"; };
 		8F79FE3725D7CD9C00238486 /* ListScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreenViewModel.swift; sourceTree = "<group>"; };
+		8F79FE3A25D7D74500238486 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		8F79FE3C25D7D75B00238486 /* SliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderView.xib; sourceTree = "<group>"; };
 		8F79FE3F25D7E63600238486 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		8F79FE4025D7E63600238486 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		8F79FE4A25D80FBD00238486 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
@@ -298,6 +302,8 @@
 			children = (
 				8F79FE5025D8229400238486 /* SearchViewController.swift */,
 				8F79FE4E25D8221A00238486 /* SearchViewController.xib */,
+				8F79FE3A25D7D74500238486 /* SliderView.swift */,
+				8F79FE3C25D7D75B00238486 /* SliderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F79FDFC25D719BB00238486 /* LaunchScreen.storyboard in Resources */,
+				8F79FE3D25D7D75B00238486 /* SliderView.xib in Resources */,
 				8F79FE2F25D7CA2B00238486 /* ListScreen.storyboard in Resources */,
 				8F79FE2A25D7C56400238486 /* Localizable.strings in Resources */,
 				8F79FE0E25D71F2800238486 /* SplashScreen.storyboard in Resources */,
@@ -433,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F79FDF025D719B700238486 /* AppDelegate.swift in Sources */,
+				8F79FE3B25D7D74500238486 /* SliderView.swift in Sources */,
 				8F79FE1025D71F4600238486 /* SplashScreenViewController.swift in Sources */,
 				8F79FE4C25D80FBD00238486 /* SearchListTableViewCell.swift in Sources */,
 				8F79FE2625D7C4C800238486 /* UIViewControllerExtensions.swift in Sources */,
