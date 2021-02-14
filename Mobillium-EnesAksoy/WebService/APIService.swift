@@ -19,11 +19,13 @@ class APIService:  NSObject {
     
     // MARK: - Connect Api
     
-    func apiToGetData(isResult: Bool = true, search: String = "", endPoint: String, completion : @escaping (_ responseModel: ResponseModel?, _ error: String, _ resultModel: ResultModel?) -> ()) {
+    func apiToGetData(isResult: Bool = true, page: Int = 0, search: String = "", endPoint: String, completion : @escaping (_ responseModel: ResponseModel?, _ error: String, _ resultModel: ResultModel?) -> ()) {
         var apiUrl = "\(baseUrlString)\(endPoint)?api_key=\(apikey)"
         
         if search != "" {
             apiUrl = "\(baseUrlString)\(endPoint)?api_key=\(apikey)&query=\(search)"
+        } else if page != 0 {
+            apiUrl = "\(baseUrlString)\(endPoint)?api_key=\(apikey)&page=\(page)"
         }
         
         Alamofire.request(apiUrl).response { response in

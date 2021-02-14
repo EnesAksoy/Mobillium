@@ -10,4 +10,9 @@ import Foundation
 
 struct ResponseModel: Codable {
     var results: [ResultModel]
+    let totalPages: Int?
+    
+    private enum CodingKeyss: String, CodingKey {
+        case totalPages = "total_pages"
+    }
 }

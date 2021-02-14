@@ -10,6 +10,11 @@ import Foundation
 
 class ListScreenViewModel: NSObject {
     
+    // MARK: - Properties
+    
+    private var apiService: APIService!
+    private let upComingEndPoint = "/movie/upcoming"
+    
     // MARK: - Constans
     
     private let dateFormat = "yyyy-MM-dd"
@@ -19,6 +24,7 @@ class ListScreenViewModel: NSObject {
     
     override init() {
         super.init()
+        self.apiService = APIService()
     }
     
     // MARK: - Get ObjectStore Data
@@ -37,6 +43,18 @@ class ListScreenViewModel: NSObject {
                 ObjectStore.shared.upComingData = upComingData
             }
             completion(nowPlayingData, upComingData)
+        }
+    }
+    
+    // MARK: - Get UpComing Data(Pagination)
+    
+    func getUpComingData(page: Int,_ completion: @escaping() -> Void) {
+        apiService.apiToGetData(page: page, endPoint: self.upComingEndPoint) { [weak self] responseModel, error, _ in
+            guard self != nil else { return }
+            if let response = responseModel, error.isEmpty {
+                ObjectStore.shared.upComingData?.results.append(contentsOf: response.results)
+                completion()
+            }
         }
     }
 }

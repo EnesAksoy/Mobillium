@@ -38,6 +38,7 @@ class ListScreenViewController: UIViewController {
     private var apiService: APIService!
     private var newString: String = ""
     private var slides = [SliderView]()
+    private var page: Int = 1
 
     // MARK: - Life Cycles
     
@@ -67,6 +68,15 @@ class ListScreenViewController: UIViewController {
         self.viewModel.getObjectStoreData { nowPlayingData, upComingData in
             self.nowPlayingData = nowPlayingData
             self.upComingData = upComingData
+        }
+    }
+    
+    // MARK: - Get UpComing Data
+    
+    private func getUpComingData(page: Int) {
+        self.viewModel.getUpComingData(page: page) {
+            self.getObjectStoreData()
+            self.tableView.reloadData()
         }
     }
     
@@ -164,10 +174,10 @@ extension ListScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listTableViewCellId,
                                                  for: indexPath) as! ListTableViewCell
-        cell.configureCell(posterUrl: (self.upComingData?.results[indexPath.row].posterPath)!,
-                           title: (self.upComingData?.results[indexPath.row].title)!,
-                           description: (self.upComingData?.results[indexPath.row].overview)!,
-                           date: (self.upComingData?.results[indexPath.row].releaseDate)!)
+        cell.configureCell(posterUrl: (self.upComingData?.results[indexPath.row].posterPath ?? ""),
+                           title: (self.upComingData?.results[indexPath.row].title ?? ""),
+                           description: (self.upComingData?.results[indexPath.row].overview ?? ""),
+                           date: (self.upComingData?.results[indexPath.row].releaseDate ?? ""))
         return cell
     }
     
@@ -175,6 +185,15 @@ extension ListScreenViewController: UITableViewDelegate, UITableViewDataSource {
         ObjectStore.shared.movieId = self.upComingData?.results[indexPath.row].id
         let vc = MovieDetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == (self.upComingData?.results.count ?? 0) - 10 {
+            self.page += 1
+            if page <= self.upComingData?.totalPages ?? 500 {
+                self.getUpComingData(page: self.page)
+            }
+        }
     }
 }
 
